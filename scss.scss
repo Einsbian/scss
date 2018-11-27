@@ -1,0 +1,60 @@
+$CommonBgColor: #000; // 主背景色
+$CommonBorderColor: #000;
+$CommonContentFontSize: #000;
+$CommonContentFontSize: #000;
+
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+  
+.box { @include border-radius(10px); }
+
+
+.message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+  }
+  
+.success {
+@extend .message;
+border-color: green;
+}
+
+
+article[role="main"] {
+float: left;
+width: 600px / 960px * 100%;
+}
+
+
+@media only screen and (min-width: 375px) {
+    html {
+      font-size : 375px;
+    }
+  }
+  
+  @media only screen and (min-width: 360px) {
+    html {
+      font-size : 360px;
+    }
+  }
+  
+  @media only screen and (min-width: 320px) {
+    html {
+      font-size : 320px;
+    }
+  }
+  
+  //定义方法：calc
+  @function calc($val){
+      @return $val / 1080;
+  }
+  
+  .logo{
+      width : calc(180rem);
+  }
